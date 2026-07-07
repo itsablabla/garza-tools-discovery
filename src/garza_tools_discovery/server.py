@@ -1,16 +1,59 @@
-"""garza-tools-discovery: MCP discovery layer for all connected MCP servers."""
+"""garza-tools-discovery: MCP discovery layer for all 28 connected MCP servers."""
 
 from fastmcp import FastMCP
 
 mcp = FastMCP("garza-tools-discovery")
 
 TOOL_GROUPS = {
-    "list_tavily_tools": [
-        {"name": "tavily_search_tavilyl", "description": "Search the web using Tavily AI-powered search"},
-        {"name": "tavily_extract_tavilyl", "description": "Extract structured content from URLs"},
-        {"name": "tavily_crawl_tavilyl", "description": "Crawl a website and return content"},
-        {"name": "tavily_map_tavilyl", "description": "Map website link structure"},
-        {"name": "tavily_research_tavilyl", "description": "Deep multi-step research on a topic"},
+    "list_beeperbox_tools": [
+        {"name": "list_accounts", "description": "List all connected messaging accounts"},
+        {"name": "get_chat", "description": "Get metadata for a specific chat"},
+        {"name": "read_chat", "description": "Read messages from a chat"},
+        {"name": "archive_chat", "description": "Archive or unarchive a chat"},
+        {"name": "list_inbox", "description": "List recently active chats"},
+        {"name": "list_unread", "description": "List chats with unread messages"},
+        {"name": "send_message", "description": "Send a text message to a chat"},
+        {"name": "search_messages", "description": "Full-text search across all messages"},
+        {"name": "react_to_message", "description": "Add an emoji reaction"},
+        {"name": "poll_messages", "description": "Poll for new messages"},
+        {"name": "note_to_self", "description": "Send message to note-to-self chat"},
+        {"name": "download_asset", "description": "Download an attachment by URL"},
+    ],
+    "list_brightdata_tools": [
+        {"name": "brightdata_web_scraping", "description": "Web scraping via Bright Data"},
+    ],
+    "list_browserbase_tools": [
+        {"name": "browserbase_automation", "description": "Cloud browser automation via Browserbase"},
+    ],
+    "list_cloudflare_tools": [
+        {"name": "cf_api_request", "description": "Cloudflare API requests"},
+    ],
+    "list_composio_tools": [
+        {"name": "COMPOSIO_MANAGE_CONNECTIONS_compohq", "description": "Manage OAuth connections"},
+        {"name": "COMPOSIO_MULTI_EXECUTE_TOOL_compohq", "description": "Execute actions across services"},
+        {"name": "COMPOSIO_REMOTE_BASH_TOOL_compohq", "description": "Remote bash execution"},
+        {"name": "COMPOSIO_REMOTE_WORKBENCH_compohq", "description": "Remote workbench"},
+        {"name": "COMPOSIO_SEARCH_TOOLS_compohq", "description": "Search for integrations"},
+        {"name": "COMPOSIO_WAIT_FOR_CONNECTIONS_compohq", "description": "Wait for OAuth flows"},
+        {"name": "COMPOSIO_GET_TOOL_SCHEMAS_compohq", "description": "Get tool schemas"},
+    ],
+    "list_context7_tools": [
+        {"name": "query_docs_context7", "description": "Query documentation for a library"},
+        {"name": "resolve_library_id_context7", "description": "Resolve a package to a Context7 ID"},
+    ],
+    "list_e2b_tools": [
+        {"name": "run_code", "description": "Execute Python in E2B sandbox"},
+    ],
+    "list_exa_tools": [
+        {"name": "exa_web_search", "description": "AI-powered web search via Exa"},
+        {"name": "exa_get_contents", "description": "Extract content from URLs via Exa"},
+    ],
+    "list_firecrawl_tools": [
+        {"name": "firecrawl_scrape_firecl", "description": "Scrape a single URL"},
+        {"name": "firecrawl_crawl_firecl", "description": "Crawl an entire website"},
+        {"name": "firecrawl_search_firecl", "description": "Search the web and scrape results"},
+        {"name": "firecrawl_map_firecl", "description": "Map website URL structure"},
+        {"name": "firecrawl_extract_firecl", "description": "Extract structured data from URLs"},
     ],
     "list_hindsight_tools": [
         {"name": "retain_hindsp7", "description": "Save a memory to a bank"},
@@ -44,39 +87,89 @@ TOOL_GROUPS = {
         {"name": "cancel_operation_hindsp7", "description": "Cancel an operation"},
         {"name": "list_tags_hindsp7", "description": "List tags across banks"},
     ],
-    "list_voicenotes_tools": [
-        {"name": "search_notes_voicefx", "description": "Semantically search voice notes"},
-        {"name": "list_notes_voicefx", "description": "List voice notes with metadata"},
-        {"name": "get_note_voicefx", "description": "Get full voice note content"},
-        {"name": "create_note_voicefx", "description": "Create a voice note"},
-    ],
-    "list_composio_tools": [
-        {"name": "COMPOSIO_MANAGE_CONNECTIONS_compohq", "description": "Manage OAuth connections"},
-        {"name": "COMPOSIO_MULTI_EXECUTE_TOOL_compohq", "description": "Execute actions across services"},
-        {"name": "COMPOSIO_REMOTE_BASH_TOOL_compohq", "description": "Remote bash execution"},
-        {"name": "COMPOSIO_REMOTE_WORKBENCH_compohq", "description": "Remote workbench"},
-        {"name": "COMPOSIO_SEARCH_TOOLS_compohq", "description": "Search for integrations"},
-        {"name": "COMPOSIO_WAIT_FOR_CONNECTIONS_compohq", "description": "Wait for OAuth flows"},
-        {"name": "COMPOSIO_GET_TOOL_SCHEMAS_compohq", "description": "Get tool schemas"},
-    ],
-    "list_browserbase_tools": [
-        {"name": "browserbase_automation", "description": "Cloud browser automation via Browserbase"},
-    ],
     "list_hyperbrowser_tools": [
         {"name": "browser_use_agent", "description": "AI web browsing agent via Hyperbrowser"},
         {"name": "crawl_webpages", "description": "Crawl and extract webpages"},
         {"name": "create_profile", "description": "Create a browser profile"},
         {"name": "delete_profile", "description": "Delete a browser profile"},
     ],
-    "list_brightdata_tools": [
-        {"name": "brightdata_web_scraping", "description": "Web scraping via Bright Data"},
+    "list_lark_base_tools": [
+        {"name": "lark_base_search_records", "description": "Search Lark Base records"},
+        {"name": "lark_base_create_record", "description": "Create a Lark Base record"},
+        {"name": "lark_base_list_tables", "description": "List Lark Base tables"},
     ],
-    "list_exa_tools": [
-        {"name": "exa_web_search", "description": "AI-powered web search via Exa"},
-        {"name": "exa_get_contents", "description": "Extract content from URLs via Exa"},
+    "list_lark_calendar_tools": [
+        {"name": "lark_calendar_list_events", "description": "List calendar events"},
+        {"name": "lark_calendar_create_event", "description": "Create a calendar event"},
+    ],
+    "list_lark_contacts_tools": [
+        {"name": "lark_contact_list_users", "description": "List users in contacts"},
+    ],
+    "list_lark_docs_tools": [
+        {"name": "lark_docx_create", "description": "Create a Lark document"},
+        {"name": "lark_docx_get_content", "description": "Get document content"},
+    ],
+    "list_lark_drive_tools": [
+        {"name": "lark_drive_list_files", "description": "List files in Drive"},
+    ],
+    "list_lark_im_tools": [
+        {"name": "lark_send_message", "description": "Send a Lark message"},
+        {"name": "lark_list_chats", "description": "List Lark chats"},
+    ],
+    "list_lark_mail_admin_tools": [
+        {"name": "lark_mail_list_groups", "description": "List mail groups"},
+    ],
+    "list_lark_mail_user_tools": [
+        {"name": "lark_mail_list_messages", "description": "List email messages"},
+        {"name": "lark_mail_send", "description": "Send an email"},
+    ],
+    "list_lark_sheets_tools": [
+        {"name": "lark_sheets_read", "description": "Read spreadsheet data"},
+    ],
+    "list_lark_tasks_tools": [
+        {"name": "lark_task_create", "description": "Create a task"},
+        {"name": "lark_task_list", "description": "List tasks"},
+    ],
+    "list_lark_wiki_tools": [
+        {"name": "lark_wiki_search", "description": "Search wiki pages"},
+    ],
+    "list_mem_tools": [
+        {"name": "read_at_mem_ai", "description": "Read a note from Mem"},
+        {"name": "create_note_mem_ai", "description": "Create a note in Mem"},
+        {"name": "search_mem_ai", "description": "Search across Mem notes"},
+        {"name": "list_notes_mem_ai", "description": "List recent Mem notes"},
+    ],
+    "list_onepassword_tools": [
+        {"name": "item_get", "description": "Get a 1Password item"},
+        {"name": "item_list", "description": "List 1Password items"},
+        {"name": "item_lookup", "description": "Look up item by UUID"},
+        {"name": "note_create", "description": "Create a secure note"},
+        {"name": "password_create", "description": "Create a password"},
+        {"name": "password_generate", "description": "Generate a random password"},
+        {"name": "password_read", "description": "Read a stored password"},
+        {"name": "vault_list", "description": "List 1Password vaults"},
+        {"name": "password_update", "description": "Update a password"},
     ],
     "list_playwright_tools": [
         {"name": "playwright_browser_automation", "description": "Browser automation via Playwright"},
+    ],
+    "list_tavily_tools": [
+        {"name": "tavily_search_tavilyl", "description": "Search the web via Tavily"},
+        {"name": "tavily_extract_tavilyl", "description": "Extract content from URLs"},
+        {"name": "tavily_crawl_tavilyl", "description": "Crawl a website"},
+        {"name": "tavily_map_tavilyl", "description": "Map website link structure"},
+        {"name": "tavily_research_tavilyl", "description": "Deep research on a topic"},
+    ],
+    "list_tfy_admin_tools": [
+        {"name": "tfy_list_servers", "description": "List all MCP servers"},
+        {"name": "tfy_register", "description": "Register a new MCP server"},
+        {"name": "tfy_delete", "description": "Delete an MCP server"},
+    ],
+    "list_voicenotes_tools": [
+        {"name": "search_notes_voicefx", "description": "Search voice notes"},
+        {"name": "list_notes_voicefx", "description": "List voice notes"},
+        {"name": "get_note_voicefx", "description": "Get full voice note"},
+        {"name": "create_note_voicefx", "description": "Create a voice note"},
     ],
 }
 
