@@ -6,3 +6,4 @@ dependencies = ["fastmcp","pyyaml"]
 
 [project.scripts]
 garza-tools-discovery = "server:main"
+garza-discovery-full = "server:main"
