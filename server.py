@@ -18,7 +18,7 @@ mcp = FastMCP(
     name="garza-tools-discovery",
     instructions=(
         "Discovery layer for garza-tools. "
-        "Query one of the 4 tools to get the full list of available tools "
+        "Query one of the 9 tools to get the full list of available tools "
         "for that category. Then call those tools on the main garza-tools MCP server."
     ),
 )
@@ -85,6 +85,27 @@ COMPOSIO_TOOLS = [
     {"name": "COMPOSIO_GET_TOOL_SCHEMAS_compohq",    "description": "Get the input/output schemas for specific Composio tools"},
 ]
 
+BROWSERBASE_TOOLS = [
+    {"name": "browserbase_browser_automation", "description": "Cloud browser automation via Browserbase"},
+]
+
+HYPERBROWSER_TOOLS = [
+    {"name": "hyperbrowser_web_browsing", "description": "Web browsing and automation via Hyperbrowser"},
+]
+
+BRIGHTDATA_TOOLS = [
+    {"name": "brightdata_web_scraping", "description": "Web scraping and data collection via Bright Data"},
+]
+
+EXA_TOOLS = [
+    {"name": "exa_web_search", "description": "AI-powered web search via Exa"},
+    {"name": "exa_get_contents", "description": "Extract content from URLs via Exa"},
+]
+
+PLAYWRIGHT_TOOLS = [
+    {"name": "playwright_browser_automation", "description": "Browser automation and web testing via Playwright"},
+]
+
 # ---------------------------------------------------------------------------
 # Discovery tools
 # ---------------------------------------------------------------------------
@@ -133,6 +154,56 @@ def list_voicenotes_tools() -> list[dict]:
 def list_composio_tools() -> list[dict]:
     """Returns all Composio integration tools available on garza-tools."""
     return COMPOSIO_TOOLS
+
+
+@mcp.tool(
+    description=(
+        "Get the complete list of cloud browser automation tools available via Browserbase. "
+        "Returns tool names and descriptions. Use these tool names on the garza-tools MCP server to execute them."
+    )
+)
+def list_browserbase_tools() -> list[dict]:
+    return BROWSERBASE_TOOLS
+
+
+@mcp.tool(
+    description=(
+        "Get the complete list of web browsing and automation tools available via Hyperbrowser. "
+        "Returns tool names and descriptions. Use these tool names on the garza-tools MCP server to execute them."
+    )
+)
+def list_hyperbrowser_tools() -> list[dict]:
+    return HYPERBROWSER_TOOLS
+
+
+@mcp.tool(
+    description=(
+        "Get the complete list of web scraping and data collection tools available via Bright Data. "
+        "Returns tool names and descriptions. Use these tool names on the garza-tools MCP server to execute them."
+    )
+)
+def list_brightdata_tools() -> list[dict]:
+    return BRIGHTDATA_TOOLS
+
+
+@mcp.tool(
+    description=(
+        "Get the complete list of AI-powered web search tools available via Exa. "
+        "Returns tool names and descriptions. Use these tool names on the garza-tools MCP server to execute them."
+    )
+)
+def list_exa_tools() -> list[dict]:
+    return EXA_TOOLS
+
+
+@mcp.tool(
+    description=(
+        "Get the complete list of browser automation and web testing tools available via Playwright. "
+        "Returns tool names and descriptions. Use these tool names on the garza-tools MCP server to execute them."
+    )
+)
+def list_playwright_tools() -> list[dict]:
+    return PLAYWRIGHT_TOOLS
 
 
 if __name__ == "__main__":
