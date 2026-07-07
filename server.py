@@ -96,7 +96,8 @@ def list_lark_mail_admin_tools():return T["lark-mail-admin"]
 @mcp.tool(description="Get complete list of Lark Mail User tools")
 def list_lark_mail_user_tools():return T["lark-mail-user"]
 
+def main():
+    mcp.run(transport="stdio")
+
 if __name__=="__main__":
-    import sys
-    t=sys.argv[1] if len(sys.argv)>1 else "streamable-http"
-    mcp.run(transport="stdio" if t=="stdio" else "streamable-http",host="0.0.0.0",port=8000)
+    main()

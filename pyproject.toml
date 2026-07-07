@@ -1,8 +1,8 @@
 [project]
 name = "garza-tools-discovery"
-version = "2.0"
+version = "3.0"
 requires-python = ">=3.10"
-dependencies = ["fastmcp"]
+dependencies = ["fastmcp","pyyaml"]
 
 [project.scripts]
-garza-tools-discovery-v2 = "server:mcp"
+garza-tools-discovery = "server:main"
