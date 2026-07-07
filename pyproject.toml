@@ -1,21 +1,8 @@
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
 [project]
 name = "garza-tools-discovery"
-version = "0.1.0"
-description = "MCP discovery layer for the garza-tools virtual server — exposes one tool per backing server group (Tavily, Hindsight, VoiceNotes, Composio)."
-readme = "README.md"
+version = "2.0"
 requires-python = ">=3.10"
-license = { text = "MIT" }
-keywords = ["mcp", "ai", "llm", "tools", "discovery"]
-dependencies = [
-    "fastmcp>=2.0.0",
-]
+dependencies = ["fastmcp"]
 
 [project.scripts]
-garza-tools-discovery = "garza_tools_discovery.__main__:main"
-
-[tool.hatch.build.targets.wheel]
-packages = ["src/garza_tools_discovery"]
+garza-tools-discovery-v2 = "server:mcp"
