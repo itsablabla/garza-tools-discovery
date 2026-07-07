@@ -1,2 +1,5 @@
-"""garza-tools-discovery: MCP discovery layer for the garza-tools virtual server."""
-__version__ = "0.1.0"
+"""Entry point for uvx execution."""
+from garza_tools_discovery.server import mcp
+
+def main():
+    mcp.run(transport="stdio")

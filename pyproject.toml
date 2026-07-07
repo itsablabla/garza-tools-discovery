@@ -1,9 +1,16 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
 name = "garza-tools-discovery"
-version = "3.1"
+version = "0.2.0"
+description = "MCP discovery layer for the garza-tools virtual server"
 requires-python = ">=3.10"
-dependencies = ["fastmcp","pyyaml"]
+dependencies = ["fastmcp>=2.0.0"]
 
 [project.scripts]
-garza-tools-discovery = "server:mcp"
-garza-discovery-full = "server:mcp"
+garza-tools-discovery = "garza_tools_discovery.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/garza_tools_discovery"]
